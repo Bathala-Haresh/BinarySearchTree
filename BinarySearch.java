@@ -39,40 +39,6 @@ class BST {
 
 		return root; 
 	} 
-
-	// method for inorder traversal of BST 
-	void inorder() { 
-		inorder_Recursive(root); 
-	} 
-
-	// recursively traverse the BST  
-	void inorder_Recursive(Node root) { 
-		if (root != null) { 
-			inorder_Recursive(root.left); 
-			System.out.print(root.key + " "); 
-			inorder_Recursive(root.right); 
-		} 
-	} 
-
-	boolean search(int key)  { 
-		root = search_Recursive(root, key); 
-		if (root!= null)
-			return true;
-		else
-			return false;
-	} 
-
-	//recursive insert function
-	Node search_Recursive(Node root, int key)  { 
-		// Base Cases: root is null or key is present at root 
-		if (root==null || root.key==key) 
-			return root; 
-		// val is greater than root's key 
-		if (root.key > key) 
-			return search_Recursive(root.left, key); 
-		// val is less than root's key 
-		return search_Recursive(root.right, key); 
-	} 
 }
 public class BinaryTree{
 	public static void main(String[] args)  { 
@@ -82,12 +48,6 @@ public class BinaryTree{
 		bst.insert(56); 
 		bst.insert(30); 
 		bst.insert(70); 
-		//print the BST
-		System.out.println("The BST Created with input data(Left-root-right):"); 
-		bst.inorder(); 
-
-		//search a key in the BST
-		boolean ret_val = bst.search (63);
-		System.out.println("\nKey 63 found in BST:" + ret_val );
+		
 	} 
 }
