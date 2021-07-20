@@ -36,8 +36,22 @@ class BST {
 		else if (key > root.key)    
 			//insert in the right subtree
 			root.right = insert_Recursive(root.right, key); 
-
+		
 		return root; 
+	} 
+
+	// method for inorder traversal of BST 
+	void inorder() { 
+		inorder_Recursive(root); 
+	} 
+
+	// recursively traverse the BST  
+	void inorder_Recursive(Node root) { 
+		if (root != null) { 
+			inorder_Recursive(root.left); 
+			System.out.print(root.key + " "); 
+			inorder_Recursive(root.right); 
+		} 
 	} 
 }
 public class BinaryTree{
@@ -48,6 +62,10 @@ public class BinaryTree{
 		bst.insert(56); 
 		bst.insert(30); 
 		bst.insert(70); 
+		//print the BST
+		System.out.println("The BST Created with input data(Left-root-right):"); 
+		bst.inorder(); 
+
 		
 	} 
 }
